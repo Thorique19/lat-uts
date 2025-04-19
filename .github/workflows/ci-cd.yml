@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Checkout kode yang ada di repositori aminnnn
+        uses: actions/checkout@v2  # Checkout kode yang ada di repository
 
       - name: Set up SSH key
         run: |
