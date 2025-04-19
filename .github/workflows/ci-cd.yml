@@ -1,0 +1,19 @@
+name: Simple CI/CD for Static Website for Middle Exam
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy files to EC2 server
+        run: |
+          echo "Deploying to EC2 server..."
+          scp -i ${{ secrets.EC2_KEY }} -r ./dist/* ec2-user@${{ secrets.EC2_HOST }}:/var/www/html/blog
