@@ -1,19 +1,25 @@
-name: Simple CI/CD for Static Website for Middle Exam
+name: Simple CI/CD for Static Website for Middle Exam Cloud computing
 
 on:
   push:
     branches:
-      - main  
+      - main 
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Gunakan runner Ubuntu untuk menjalankan job ini
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  # Checkout kode yang ada di repositori
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa_git
+          chmod 600 ~/.ssh/id_rsa_git 
 
       - name: Copy files to EC2 server
         run: |
           echo "Deploying to EC2 server..."
-          scp -i ${{ secrets.EC2_KEY }} -r ./dist/* ec2-user@${{ secrets.EC2_HOST }}:/var/www/html/blog
+          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/var/www/html/blog
