@@ -1,9 +1,9 @@
-name: Simple CI/CD for Static Website for Middle Exam Cloud computing
+name: Simple CI/CD for Static Website for Middle Exam
 
 on:
   push:
     branches:
-      - main 
+      - main  # Workflow ini hanya berjalan saat ada perubahan di branch main
 
 jobs:
   deploy:
@@ -11,15 +11,25 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Checkout kode yang ada di repository
+        uses: actions/checkout@v2  # Checkout kode yang ada di repositori
 
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa_git
-          chmod 600 ~/.ssh/id_rsa_git 
+          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa_git  # Menambahkan SSH key
+          chmod 600 ~/.ssh/id_rsa_git  # Mengubah izin file SSH key untuk keamanan
+
+      - name: Ensure the blog directory exists on EC2 server
+        run: |
+          echo "Checking if /usr/share/nginx/html/blog exists..."
+          ssh -i ~/.ssh/id_rsa_git ec2-user@${{ secrets.EC2_HOST }} 'mkdir -p /usr/share/nginx/html/blog'  # Pastikan folder ada
 
       - name: Copy files to EC2 server
         run: |
           echo "Deploying to EC2 server..."
-          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/blog
+          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/blog  # Salin file ke server EC2
+          
+      - name: Restart Nginx on EC2
+        run: |
+          echo "Restarting Nginx on EC2 server..."
+          ssh -i ~/.ssh/id_rsa_git ec2-user@${{ secrets.EC2_HOST }} 'sudo systemctl restart nginx'  # Restart Nginx untuk memuat perubahan
