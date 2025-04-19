@@ -1,4 +1,4 @@
-name: Simple CI/CD for Middle Exam Cloud Computing LETSGO
+name: Simple CI/CD for Middle Exam Cloud Computing
 
 on:
   push:
