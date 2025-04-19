@@ -1,35 +1,29 @@
-name: Simple CI/CD for Static Website for Middle Exam
+name: Simple CI/CD for Middle Exam Cloud Computing
 
 on:
   push:
     branches:
-      - main  # Workflow ini hanya berjalan saat ada perubahan di branch main
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Gunakan runner Ubuntu untuk menjalankan job ini
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Checkout kode yang ada di repositori
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      - name: Set up SSH key
+      - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa_git  # Menambahkan SSH key
-          chmod 600 ~/.ssh/id_rsa_git  # Mengubah izin file SSH key untuk keamanan
+          echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa_git
+          chmod 600 ~/.ssh/id_rsa_git
 
-      - name: Ensure the blog directory exists on EC2 server
+      - name: Make sure target directory exists
         run: |
-          echo "Checking if /usr/share/nginx/html/blog exists..."
-          ssh -i ~/.ssh/id_rsa_git ec2-user@${{ secrets.EC2_HOST }} 'mkdir -p /usr/share/nginx/html/blog'  # Pastikan folder ada
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_git ec2-user@${{ secrets.EC2_HOST }} "mkdir -p /usr/share/nginx/html/blog"
 
-      - name: Copy files to EC2 server
+      - name: Copy files to EC2
         run: |
           echo "Deploying to EC2 server..."
-          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/blog  # Salin file ke server EC2
-          
-      - name: Restart Nginx on EC2
-        run: |
-          echo "Restarting Nginx on EC2 server..."
-          ssh -i ~/.ssh/id_rsa_git ec2-user@${{ secrets.EC2_HOST }} 'sudo systemctl restart nginx'  # Restart Nginx untuk memuat perubahan
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/blog
