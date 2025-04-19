@@ -22,4 +22,4 @@ jobs:
       - name: Copy files to EC2 server
         run: |
           echo "Deploying to EC2 server..."
-          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/var/www/html/blog 
+          scp -i ~/.ssh/id_rsa_git -r * ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/blog
