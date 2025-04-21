@@ -387,93 +387,131 @@
 </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 bg-opacity-50 relative overflow-hidden">
-        <div class="container mx-auto px-6 z-10 relative">
-            <div class="section-header mb-16 text-center">
-                <h2 class="text-3xl md:text-4xl font-['Orbitron'] font-bold mb-2">CONTACT <span class="text-cyan-400">ME</span></h2>
-                <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+    <!-- Background Animation Effect -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="stars-container"></div>
+    </div>
+    
+    <!-- Glow Effects -->
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-500 rounded-full blur-[150px] opacity-20"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-20"></div>
+    
+    <div class="container mx-auto px-6 z-10 relative">
+      <div class="section-header mb-16 text-center">
+        <h2 class="text-3xl md:text-5xl font-['Orbitron'] font-bold mb-4 tracking-wider">
+          CONTACT <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">ME</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+        <p class="text-gray-400 mt-6 max-w-2xl mx-auto">Ready to bring your ideas to life? Let's collaborate and create something extraordinary together.</p>
+      </div>
+  
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        <!-- Get in Touch -->
+        <div class="contact-info space-y-10 backdrop-blur-sm bg-gray-900 bg-opacity-40 p-8 rounded-2xl border border-gray-800 shadow-xl transform hover:translate-y-[-5px] transition-transform duration-300">
+          <h3 class="text-2xl font-['Orbitron'] font-bold text-white">
+            <span class="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Get In Touch</span>
+          </h3>
+          <p class="text-lg text-gray-300">
+            Got a project in mind or an idea you'd like to explore together? Let's connect!
+          </p>
+          <div class="contact-items space-y-8">
+            
+            <!-- Location -->
+            <div class="contact-item flex items-center space-x-5 group">
+              <div class="contact-icon p-4 bg-gray-800 rounded-lg shadow-lg group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                <a href="https://maps.app.goo.gl/DmsB9LxmavyP7Xpo8" target="_blank" class="block">
+                  <i class="fas fa-map-marker-alt text-cyan-400 group-hover:text-white text-xl"></i>
+                </a>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Location</h4>
+                <p class="text-gray-400 group-hover:text-cyan-300 transition-colors duration-300">Bandung, Jawa Barat</p>
+              </div>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="contact-info space-y-8">
-                    <h3 class="text-2xl font-semibold text-cyan-400">Get In Touch</h3>
-                    <p class="text-lg text-gray-400">Got a project in mind or an idea you'd like to explore together? Let's connect!</p>
-                    <div class="contact-items space-y-6">
-            
-                        <!-- Location -->
-                        <div class="contact-item flex items-center space-x-4">
-                            <div class="contact-icon">
-                                <a href="https://maps.app.goo.gl/DmsB9LxmavyP7Xpo8" target="_blank">
-                                    <i class="fas fa-map-marker-alt text-cyan-400"></i>
-                                </a>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold">Location</h4>
-                                <p class="text-gray-400">Bandung, Jawa Barat</p>
-                            </div>
-                        </div>
-            
-                        <!-- Email -->
-                        <div class="contact-item flex items-center space-x-4">
-                            <div class="contact-icon">
-                                <a href="mailto:thorique000@gmail.com">
-                                    <i class="fas fa-envelope text-cyan-400"></i>
-                                </a>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold">Email</h4>
-                                <p class="text-gray-400">thorique000@gmail.com</p>
-                            </div>
-                        </div>
-            
-                        <!-- Phone -->
-                        <div class="contact-item flex items-center space-x-4">
-                            <div class="contact-icon">
-                                <a href="wa.me/62887951533">
-                                    <i class="fas fa-phone-alt text-cyan-400"></i>
-                                </a>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold">Phone</h4>
-                                <p class="text-gray-400">+62887951533</p>
-                            </div>
-                        </div>
-            
-                    </div>
-                </div>
+  
+            <!-- Email -->
+            <div class="contact-item flex items-center space-x-5 group">
+              <div class="contact-icon p-4 bg-gray-800 rounded-lg shadow-lg group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                <a href="mailto:thorique000@gmail.com" class="block">
+                  <i class="fas fa-envelope text-cyan-400 group-hover:text-white text-xl"></i>
+                </a>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Email</h4>
+                <p class="text-gray-400 group-hover:text-cyan-300 transition-colors duration-300">thorique000@gmail.com</p>
+              </div>
             </div>
-            
-                    <div class="social-links flex space-x-4 mt-8">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Your Email" class="form-input">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your Message" class="form-textarea"></textarea>
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="btn-submit">Send Message<i class="fas fa-paper-plane ml-2"></i></button>
-                        </div>
-                    </form>
-                </div>
+  
+            <!-- Phone -->
+            <div class="contact-item flex items-center space-x-5 group">
+              <div class="contact-icon p-4 bg-gray-800 rounded-lg shadow-lg group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                <a href="https://wa.me/62887951533" target="_blank" class="block">
+                  <i class="fas fa-phone-alt text-cyan-400 group-hover:text-white text-xl"></i>
+                </a>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-white">Phone</h4>
+                <p class="text-gray-400 group-hover:text-cyan-300 transition-colors duration-300">+62887951533</p>
+              </div>
             </div>
+          </div>
+  
+          <!-- Social Links -->
+          <div class="social-links flex space-x-4 mt-8">
+            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 text-cyan-400 hover:text-white transition-all duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Thorique19" class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 text-cyan-400 hover:text-white transition-all duration-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 text-cyan-400 hover:text-white transition-all duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 text-cyan-400 hover:text-white transition-all duration-300">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </div>
         </div>
-    </section>
+  
+        <!-- Contact Form -->
+        <div class="contact-form backdrop-blur-sm bg-gray-900 bg-opacity-40 p-8 rounded-2xl border border-gray-800 shadow-xl">
+          <h3 class="text-2xl font-['Orbitron'] font-bold mb-8 text-white">
+            <span class="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Send Message</span>
+          </h3>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="form-group relative">
+                <input type="text" placeholder="Your Name" class="form-input w-full px-5 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all duration-300">
+                <i class="fas fa-user absolute right-4 top-4 text-gray-500"></i>
+              </div>
+              <div class="form-group relative">
+                <input type="email" placeholder="Your Email" class="form-input w-full px-5 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all duration-300">
+                <i class="fas fa-envelope absolute right-4 top-4 text-gray-500"></i>
+              </div>
+            </div>
+            <div class="form-group relative">
+              <input type="text" placeholder="Subject" class="form-input w-full px-5 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all duration-300">
+              <i class="fas fa-bookmark absolute right-4 top-4 text-gray-500"></i>
+            </div>
+            <div class="form-group relative">
+              <textarea rows="5" placeholder="Your Message" class="form-textarea w-full px-5 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all duration-300"></textarea>
+              <i class="fas fa-comment-alt absolute right-4 top-4 text-gray-500"></i>
+            </div>
+            <button type="submit" class="btn-submit w-full md:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center group transition-all duration-300 shadow-lg hover:shadow-cyan-500/30">
+              Send Message 
+              <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  
+
 
     <!-- Footer -->
     <footer class="py-8 border-t border-cyan-900/30">
